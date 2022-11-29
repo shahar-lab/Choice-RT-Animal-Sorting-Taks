@@ -1,0 +1,157 @@
+body {
+    background-color: white;
+  }
+    
+    
+    img {
+        height: 187.5px;
+        width: 127.5px;
+    }
+
+
+    img.keyboard {
+        height: 215px;
+        width: 517px;
+    }
+
+    img.selection_example {
+        height: 268px;
+        width: 365px;
+    }
+
+    img.fullscreen {
+        height: 150px;
+        width: 526px;
+    }
+
+    
+    img.garden {
+        height: 550px;
+        width: 800px;
+    }
+
+    img.cute_gardener {
+        height: 450px;
+        width: 375px;
+    }
+
+    img.Hourglass {
+        height: 100px;
+        width: 100px;
+    }
+
+    :root {
+        --left_card: 0px;
+        --right_card: 0px;
+        --top_card: 0px;
+
+        --top_reward: 0px;
+        --left_reward: 0px;
+        --square: 0px;
+    }
+
+    .fixation {
+        /* plus fixation will be in the middle of the screen*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15.8px;
+    }
+
+    .reward {
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
+        width: 200px;
+    }
+
+    .group {
+        height: 250px;
+        width:680px;
+    }
+
+    .square_left {
+        position: fixed;
+        height: 250px;
+        width: 170px;
+        /* border:3px solid #000; */
+        left: var(--left_card); 
+        top: var(--top_card);
+        border: 3px solid #ccc;
+        margin: auto;
+    } 
+
+
+    .square_right {
+        position: fixed;
+        height: 250px;
+        width: 174px;
+        /* border:3px solid #000; */
+        right: var(--right_card);
+       top: var(--top_card);
+       border: 3px solid #ccc;
+       margin: auto;
+    } 
+
+    .example {
+        height: 259px;
+        width: 387px;
+    }
+
+    img.card_left {
+        position: fixed;
+        height: 250px;
+        width: 170px;
+        left: var(--left_card); 
+        top: var(--top_card);
+    }
+
+    img.card_right {
+        position: fixed;
+        height: 250px;
+        width: 170px;
+        right: var(--right_card); 
+        top: var(--top_card);
+    }
+
+    img.card_left_with_frame {
+        position: fixed;
+        height: 250px;
+        width: 170px;
+        left: var(--left_card); 
+        top: var(--top_card);
+        border: 3px solid #000;
+        margin: auto;
+    }
+
+    img.card_right_with_frame {
+        position: fixed;
+        height: 250px;
+        width: 170px;
+        right: var(--right_card); 
+        top: var(--top_card);
+         border: 3px solid #000; 
+        margin: auto;
+    }
+
+    img.card_left_reward {
+        position: fixed;
+        height: 188px;
+        width: 128px;
+        left: var(--left_card); 
+        top: var(--top_card_reward);
+        
+    }
+
+    img.card_right_reward {
+        position: fixed;
+        height: 188px;
+        width: 128px;
+        right: var(--right_card); 
+        top: var(--top_card_reward);
+
+    }
+
+

@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Open progress bar.html",
+            "file": "c:\\Users\\noash\\iCloudDrive\\Nitzhan Shahar Lab\\Code\\0004_Ido_Set-size_effects-master\\experiment_01_21\\cards\\progress bar.html"
+        }
+    ]
+}
