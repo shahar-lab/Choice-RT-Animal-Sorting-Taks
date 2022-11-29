@@ -120,10 +120,26 @@
       ];
 
       var shuffled_stimuli = jsPsych.randomization.shuffle(stimuli) 
-      var test_stimuli_2 = [{stimulus:shuffled_stimuli[0].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[1].stimulus, correct_response:correct_response[1].correct_response}]
-      var test_stimuli_4 = [{stimulus:shuffled_stimuli[2].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[3].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[4].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[5].stimulus, correct_response:correct_response[1].correct_response}]
-      var test_stimuli_6 = [{stimulus:shuffled_stimuli[6].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[7].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[8].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[9].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[10].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[11].stimulus, correct_response:correct_response[1].correct_response}]
-      var test_stimuli_8 = [{stimulus:shuffled_stimuli[12].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[13].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[14].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[15].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[16].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[17].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[18].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[19].stimulus, correct_response:correct_response[1].correct_response}]
+      var test_stimuli_2 = [{stimulus:shuffled_stimuli[0].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[1].stimulus, correct_response:correct_response[1].correct_response}]
+      var test_stimuli_4 = [{stimulus:shuffled_stimuli[2].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[3].stimulus, correct_response:correct_response[1].correct_response},
+                            {stimulus:shuffled_stimuli[4].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[5].stimulus, correct_response:correct_response[1].correct_response}]
+      var test_stimuli_6 = [{stimulus:shuffled_stimuli[6].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[7].stimulus, correct_response:correct_response[1].correct_response},
+                            {stimulus:shuffled_stimuli[8].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[9].stimulus, correct_response:correct_response[1].correct_response},
+                            {stimulus:shuffled_stimuli[10].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[11].stimulus, correct_response:correct_response[1].correct_response}]
+      var test_stimuli_8 = [{stimulus:shuffled_stimuli[12].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[13].stimulus, correct_response:correct_response[1].correct_response},
+                            {stimulus:shuffled_stimuli[14].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[15].stimulus, correct_response:correct_response[1].correct_response},
+                            {stimulus:shuffled_stimuli[16].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[17].stimulus, correct_response:correct_response[1].correct_response},
+                            {stimulus:shuffled_stimuli[18].stimulus, correct_response:correct_response[0].correct_response},
+                            {stimulus:shuffled_stimuli[19].stimulus, correct_response:correct_response[1].correct_response}]
 
    
       /* define fixation and test trials */
@@ -223,9 +239,6 @@
       }
     };
 
-
-
-
     var finish_block = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: '<p> Good job! The current block is over. </p>' +
@@ -278,10 +291,11 @@
       repetitions: 8,
       randomize_order: true
     };
-    
-    
 
-    timeline.push(block_start_1, block_1, finish_block, block_start_2, block_2, finish_block, block_start_3, block_3, finish_block, block_start_4, block_4);
+    timeline.push(block_start_1, block_1, finish_block,
+                  block_start_2, block_2, finish_block, 
+                  block_start_3, block_3, finish_block, 
+                  block_start_4, block_4);
 
     /* define debrief */
     var debrief_block = {
