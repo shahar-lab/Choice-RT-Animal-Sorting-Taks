@@ -29,7 +29,7 @@
     /* preload images */
     var preload = {
       type: jsPsychPreload,
-      images: ['images/zoo.png','images/keyboard.png','images/1.png', 'images/2.png', 'images/3.png', 'images/4.png', 'images/5.png', 'images/6.png', 'images/7.png', 'images/8.png', 'images/9.png', 'images/10.png', 'images/11.png', 'images/12.png', 'images/13.png', 'images/14.png', 'images/15.png', 'images/16.png', 'images/17.png', 'images/18.png', 'images/19.png', 'images/20.png']
+      images: ['images/zoo.png','images/keyboard.png','images/space.png','images/1.png', 'images/2.png', 'images/3.png', 'images/4.png', 'images/5.png', 'images/6.png', 'images/7.png', 'images/8.png', 'images/9.png', 'images/10.png', 'images/11.png', 'images/12.png', 'images/13.png', 'images/14.png', 'images/15.png', 'images/16.png', 'images/17.png', 'images/18.png', 'images/19.png', 'images/20.png']
     };
     timeline.push(preload);
 
@@ -123,7 +123,7 @@
       var test_stimuli_2 = [{stimulus:shuffled_stimuli[0].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[1].stimulus, correct_response:correct_response[1].correct_response}]
       var test_stimuli_4 = [{stimulus:shuffled_stimuli[2].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[3].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[4].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[5].stimulus, correct_response:correct_response[1].correct_response}]
       var test_stimuli_6 = [{stimulus:shuffled_stimuli[6].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[7].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[8].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[9].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[10].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[11].stimulus, correct_response:correct_response[1].correct_response}]
-      var test_stimuli_8 = [{stimulus:shuffled_stimuli[12].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[13].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[14].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[15].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[16].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[17].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[18].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[19].stimulus, correct_response:correct_response[1].correct_response}]
+      var test_stimuli_8 = [{stimulus:shuffled_stimuli[12].stimulus, correct_response:correct_response[0].correct_response}, {stimulus:shuffled_stimuli[13].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[14].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[15].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[16].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[17].stimulus, correct_response:correct_response[1].correct_response},{stimulus:shuffled_stimuli[18].stimulus, correct_response:correct_response[0].correct_response},{stimulus:shuffled_stimuli[19].stimulus, correct_response:correct_response[1].correct_response}]
 
    
       /* define fixation and test trials */
@@ -135,6 +135,7 @@
       '<p style="text-align: center">The animals on the right side of the screen belong to Kansas-City Zoo.</p>' +
       '<p style="text-align: center">Do your best to remember which animal belongs to each zoo.</p>' +
       '<img src="' + test_stimuli_2[0].stimulus + '"> '+
+      '<img src="images/space.png"> ' +
       '<img src="' + test_stimuli_2[1].stimulus + '"> ' +
       '<p style="text-align: center">Press any key to continue.</p>' 
       ,
@@ -150,6 +151,7 @@
       '<p style="text-align: center">Do your best to remember which animal belongs to each zoo.</p>' +
       '<img src="' + test_stimuli_4[0].stimulus + '"> '+
       '<img src="' + test_stimuli_4[2].stimulus + '"> ' +
+      '<img src="images/space.png"> ' +
       '<img src="' + test_stimuli_4[1].stimulus + '"> ' +
       '<img src="' + test_stimuli_4[3].stimulus + '"> ' +
       '<p style="text-align: center">Press any key to continue.</p>' 
@@ -167,6 +169,7 @@
       '<img src="' + test_stimuli_6[0].stimulus + '"> '+
       '<img src="' + test_stimuli_6[2].stimulus + '"> ' +
       '<img src="' + test_stimuli_6[4].stimulus + '"> ' +
+      '<img src="images/space.png"> ' +
       '<img src="' + test_stimuli_6[1].stimulus + '"> ' +
       '<img src="' + test_stimuli_6[3].stimulus + '"> ' +
       '<img src="' + test_stimuli_6[5].stimulus + '"> ' +
@@ -186,6 +189,7 @@
       '<img src="' + test_stimuli_8[2].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[4].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[6].stimulus + '"> ' +
+      '<img src="images/space.png"> ' +
       '<img src="' + test_stimuli_8[1].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[3].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[5].stimulus + '"> ' +
