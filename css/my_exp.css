@@ -2,14 +2,26 @@ body {
     background-color: white;
   }
     
-    
+/*     
     img {
         height: 187.5px;
         width: 127.5px;
+    } */
+
+
+        
+    img {
+        height: 1870.5vh;
+        width: 127.5vw;
     }
 
 
     img.keyboard {
+        height: 215px;
+        width: 517px;
+    }
+
+    img.space {
         height: 215px;
         width: 517px;
     }
@@ -25,20 +37,12 @@ body {
     }
 
     
-    img.garden {
+    img.zoo {
         height: 550px;
         width: 800px;
     }
 
-    img.cute_gardener {
-        height: 450px;
-        width: 375px;
-    }
 
-    img.Hourglass {
-        height: 100px;
-        width: 100px;
-    }
 
     :root {
         --left_card: 0px;
@@ -100,12 +104,10 @@ body {
         width: 387px;
     }
 
-    img.card_left {
+    img.animal {
         position: fixed;
         height: 250px;
         width: 170px;
-        left: var(--left_card); 
-        top: var(--top_card);
     }
 
     img.card_right {

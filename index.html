@@ -60,31 +60,15 @@
         <p>In this experiment, an animal will appear in the center 
         of the screen.</p><p> As you will see later, each animal belongs to one of two zoos (San Diego and Kansas-City).
         </p><p>Your goal is to remember which animal belongs to each zoo and associate it accordingly.
-        </p><p>If the animal is belongs to <strong>San-Diego Zoo</strong>, 
+        </p><p>If the animal belongs to <strong>San-Diego Zoo</strong>, 
         press the letter  <strong>S </strong>  on the keyboard as fast as you can.</p>
-        <p>If the animal is belongs to <strong>Kansas-City Zoo</strong>, press the letter  <strong>K </strong>
+        <p>If the animal belongs to <strong>Kansas-City Zoo</strong>, press the letter  <strong>K </strong>
         as fast as you can.</p>
         <div style='width: 700px;'>
         </div>
         <div style='float: center;'><img src='images/keyboard.png'></img>
         <p>Press any key to begin.</p>
       `,
-
-
-    //   stimulus: `
-    //     <p>In this experiment, an animal will appear in the center 
-    //     of the screen.</p><p>If the animal is belongs to <strong>Bronx Zoo</strong>, 
-    //     press the letter  <strong>F </strong>  on the keyboard as fast as you can.</p>
-    //     <p>If the animal is belongs to <strong>San-Diego Zoo</strong>, press the letter  <strong>J </strong>
-    //     as fast as you can.</p>
-    //     <div style='width: 700px;'>
-    //     // <div style='float: left;'><img src='images/1.png'></img>
-    //     // <p class='small'><strong>Bronx Zoo</strong></p></div>
-    //     // <div style='float: right;'><img src='images/2.png'></img>
-    //     // <p class='small'><strong>San-Diego Zoo</strong></p></div>
-    //     // </div>
-    //     <p>Press any key to begin.</p>
-    //   `,
       post_trial_gap: 50
     };
     timeline.push(instructions);
@@ -150,9 +134,10 @@
       '<p style="text-align: center">The animals on the left side of the screen belong to San-Diego Zoo.</p>' +
       '<p style="text-align: center">The animals on the right side of the screen belong to Kansas-City Zoo.</p>' +
       '<p style="text-align: center">Do your best to remember which animal belongs to each zoo.</p>' +
-      '<img src="' + test_stimuli_2[0].stimulus + '"> '+
-      '<img src="images/space.png"> ' +
+      '<img src="' + test_stimuli_2[0].stimulus + '"> ' +
+      '<img src="images/space_2.png"> ' +
       '<img src="' + test_stimuli_2[1].stimulus + '"> ' +
+      '<p><b> Press S </b> <img src="images/space.png"><b>Press K</b></p> <br>' +  
       '<p style="text-align: center">Press any key to continue.</p>' 
       ,
       post_trial_gap: 50
@@ -167,9 +152,10 @@
       '<p style="text-align: center">Do your best to remember which animal belongs to each zoo.</p>' +
       '<img src="' + test_stimuli_4[0].stimulus + '"> '+
       '<img src="' + test_stimuli_4[2].stimulus + '"> ' +
-      '<img src="images/space.png"> ' +
+      '<img src="images/space_2.png"> ' +
       '<img src="' + test_stimuli_4[1].stimulus + '"> ' +
       '<img src="' + test_stimuli_4[3].stimulus + '"> ' +
+      '<p><b> Press S </b> <img src="images/space.png"><b>Press K</b></p> <br>' +  
       '<p style="text-align: center">Press any key to continue.</p>' 
       ,
       post_trial_gap: 50
@@ -185,10 +171,11 @@
       '<img src="' + test_stimuli_6[0].stimulus + '"> '+
       '<img src="' + test_stimuli_6[2].stimulus + '"> ' +
       '<img src="' + test_stimuli_6[4].stimulus + '"> ' +
-      '<img src="images/space.png"> ' +
+      '<img src="images/space_2.png"> ' +
       '<img src="' + test_stimuli_6[1].stimulus + '"> ' +
       '<img src="' + test_stimuli_6[3].stimulus + '"> ' +
       '<img src="' + test_stimuli_6[5].stimulus + '"> ' +
+      '<p><b> Press S </b> <img src="images/space_2.png"> <img src="images/space_2.png"> <b>Press K</b></p> <br>' +  
       '<p style="text-align: center">Press any key to continue.</p>' 
       ,
       post_trial_gap: 50
@@ -205,11 +192,12 @@
       '<img src="' + test_stimuli_8[2].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[4].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[6].stimulus + '"> ' +
-      '<img src="images/space.png"> ' +
+      '<img src="images/space_2.png"> ' +
       '<img src="' + test_stimuli_8[1].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[3].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[5].stimulus + '"> ' +
       '<img src="' + test_stimuli_8[7].stimulus + '"> ' +
+      '<p><b> Press S </b> <img src="images/space_2.png"> <img src="images/space_2.png"> <img src="images/space_2.png"> <b>Press K</b></p> <br>' +  
       '<p style="text-align: center">Press any key to continue.</p>' 
       ,
       post_trial_gap: 50
@@ -247,7 +235,7 @@
     };
 
     /* define test procedure */
-    var block_1 = {
+    var trials_block_1 = {
       timeline: [fixation, test],
       timeline_variables: test_stimuli_2,
       sample: {
@@ -259,43 +247,54 @@
     };
     
 
-    var block_2 = {
+    var trials_block_2 = {
       timeline: [fixation, test],
       timeline_variables: test_stimuli_4,
       sample: {
         type: 'with-replacement',
         size: 1
     },
-      repetitions: 4,
+      repetitions: 2,
       randomize_order: true
     };
 
-    var block_3 = {
+    var trials_block_3 = {
       timeline: [fixation, test],
       timeline_variables: test_stimuli_6,
       sample: {
         type: 'with-replacement',
         size: 1
     },
-      repetitions: 6,
+      repetitions: 2,
       randomize_order: true
     };
 
-    var block_4 = {
+    var trials_block_4 = {
       timeline: [fixation, test],
       timeline_variables: test_stimuli_8,
       sample: {
         type: 'with-replacement',
         size: 1
     },
-      repetitions: 8,
+      repetitions: 2,
       randomize_order: true
     };
 
-    timeline.push(block_start_1, block_1, finish_block,
-                  block_start_2, block_2, finish_block, 
-                  block_start_3, block_3, finish_block, 
-                  block_start_4, block_4);
+
+    // var block_1 = {block_start_1, trials_block_1}
+    // var block_2 = {block_start_2, trials_block_2}
+    // var block_3 = {block_start_3, trials_block_3}
+    // var block_4 = {block_start_4, trials_block_4}
+   //var blocks = [block_1,block_2,block_3,block_4];
+
+  //  var blocks = [block_start_1,block_start_2,block_start_3,block_start_4];
+  //   var shuffled_blocks = jsPsych.randomization.shuffle[blocks]
+
+  //   timeline.push(shuffled_blocks[0])
+    timeline.push(block_start_1, trials_block_1, finish_block,
+                  block_start_2, trials_block_2, finish_block, 
+                  block_start_3, trials_block_3, finish_block, 
+                  block_start_4, trials_block_4);
 
     /* define debrief */
     var debrief_block = {
