@@ -19,6 +19,15 @@
     <link href="css/my_exp.css" rel="stylesheet" type="text/css">
   <link href="css/jspsych.css" rel="stylesheet" type="text/css">
 
+	<!-- <script type="text/javascript" src="lib/vendors/jspsych-6.0.0/jspsych.js"></script>
+	<link href="lib/vendors/jspsych-6.0.0/css/jspsych.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="lib/vendors/jspsych-6.0.0/plugins/jspsych-html-keyboard-response.js"></script>
+	<script type="text/javascript" src="lib/vendors/jspsych-6.0.0/plugins/jspsych-image-keyboard-response.js"></script>
+
+	<script type="text/javascript" src="lib/vendors/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="lib/jspsych-pavlovia-2020.2.js"></script> -->
+
   </head>
   <body></body>
   <script>
@@ -28,15 +37,18 @@
     var vis_angle_px = 105
         //---------------------------------------------------------------------------------------------
 
-    // /* initialize jsPsych */
-    // var jsPsych = initJsPsych({
-    //   on_finish: function() {
-    //     jsPsych.data.displayData();
-    //   }
-    // });
 
     /* create timeline */
     var timeline = [];
+
+
+    // /* init connection with pavlovia.org */
+    // var pavlovia_init = {
+    //   type: "pavlovia",
+    //   command: "init"
+    // };
+    
+    // timeline.push(pavlovia_init);
 
     /* preload images */
     var preload = {
@@ -160,11 +172,11 @@
           </tr>
              <tr style="border: 0px;border-style: solid;">
               <td style="border: 0px;border-style: solid;">
-               <p> Press S </p>
+               <p> San-Diego Zoo - <strong>Press S</strong> </p>
                </td>
                <td style="width: 10px"></td>
                 <td style="border: 0px;border-style: solid;">
-               <p> Press K </p>
+               <p> Kansas-City Zoo -  <strong>Press K</strong> </p>
               </td>
           </tbody>
         </table>
@@ -181,7 +193,7 @@
         <p style="justify-content: center; display:flex">The animals on the left side of the screen belong to San-Diego Zoo.</p>
         <p style="justify-content: center; display:flex">The animals on the right side of the screen belong to Kansas-City Zoo.</p>
         <p style="justify-content: center; display:flex">Do your best to remember which animal belongs to each zoo.</p>
-        <p style="text-align: center">Press any key to continue.</p>
+        <p style="text-align: center">Press any key to continue when you ready to begin.</p>
         <table style="justify-content: center; display:flex">
           <tbody>
           <tr>
@@ -196,11 +208,11 @@
           </tr>
              <tr style="border: 0px;border-style: solid;">
               <td style="border: 0px;border-style: solid;">
-               <p> Press S </p>
+               <p> San-Diego Zoo - <strong>Press S</strong> </p>     
                </td>
                 <td style="width: 10px"></td>
                 <td style="border: 0px;border-style: solid;">
-               <p> Press K </p>
+               <p>  Kansas-City Zoo -  <strong>Press K</strong> </p>
               </td>
           </tbody>
         </table>
@@ -216,7 +228,7 @@
         <p style="justify-content: center; display:flex">The animals on the left side of the screen belong to San-Diego Zoo.</p>
         <p style="justify-content: center; display:flex">The animals on the right side of the screen belong to Kansas-City Zoo.</p>
         <p style="justify-content: center; display:flex">Do your best to remember which animal belongs to each zoo.</p>
-        <p style="text-align: center">Press any key to continue.</p>
+        <p style="text-align: center">Press any key to continue when you ready to begin.</p>
         <table style="justify-content: center; display:flex">
           <tbody>
           <tr>
@@ -233,11 +245,11 @@
           </tr>
              <tr style="border: 0px;border-style: solid;">
               <td style="border: 0px;border-style: solid;">
-               <p> Press S </p>
+               <p> San-Diego Zoo - <strong>Press S</strong </p>
                </td>
                <td style="width: 10px"></td>
                 <td style="border: 0px;border-style: solid;">
-               <p> Press K </p>
+               <p> Kansas-City Zoo -  <strong>Press K</strong> </p>
               </td>
           </tbody>
         </table>
@@ -253,7 +265,7 @@
         <p style="justify-content: center; display:flex">The animals on the left side of the screen belong to San-Diego Zoo.</p>
         <p style="justify-content: center; display:flex">The animals on the right side of the screen belong to Kansas-City Zoo.</p>
         <p style="justify-content: center; display:flex">Do your best to remember which animal belongs to each zoo.</p>
-        <p style="text-align: center">Press any key to continue.</p>
+        <p style="text-align: center">Press any key to continue when you ready to begin.</p>
         <table style="justify-content: center; display:flex">
           <tbody>
           <tr>
@@ -272,11 +284,11 @@
           </tr>
              <tr style="border: 0px;border-style: solid;">
               <td style="border: 0px;border-style: solid;">
-               <p> Press S </p>
+               <p> San-Diego Zoo - <strong>Press S</strong </p>
                </td>
                <td style="width: 10px"></td>
                 <td style="border: 0px;border-style: solid;">
-               <p> Press K </p>
+               <p> Kansas-City Zoo -  <strong>Press K</strong> </p>
               </td>
           </tbody>
         </table>
@@ -326,7 +338,12 @@
         size: 1
     },
       repetitions: 2,
-      randomize_order: true
+      randomize_order: true,
+      data: {
+                set_size: '2',
+                object1: test_stimuli_2[0].stimulus,
+                object2: test_stimuli_2[1].stimulus
+            },
     };
     
 
@@ -338,7 +355,14 @@
         size: 1
     },
       repetitions: 2,
-      randomize_order: true
+      randomize_order: true,
+      data: {
+                set_size: '4',
+                object1: test_stimuli_4[0].stimulus,
+                object2: test_stimuli_4[1].stimulus,
+                object3: test_stimuli_4[2].stimulus,
+                object4: test_stimuli_4[3].stimulus
+            },
     };
 
     var trials_block_3 = {
@@ -349,7 +373,17 @@
         size: 1
     },
       repetitions: 2,
-      randomize_order: true
+      randomize_order: true,
+      data: {
+                set_size: '6',
+                object1: test_stimuli_6[0].stimulus,
+                object2: test_stimuli_6[1].stimulus,
+                object3: test_stimuli_6[2].stimulus,
+                object4: test_stimuli_6[3].stimulus,
+                object5: test_stimuli_6[4].stimulus,
+                object6: test_stimuli_6[5].stimulus
+            },
+
     };
 
     var trials_block_4 = {
@@ -360,7 +394,18 @@
         size: 1
     },
       repetitions: 2,
-      randomize_order: true
+      randomize_order: true,
+      data: {
+                set_size: '8',
+                object1: test_stimuli_8[0].stimulus,
+                object2: test_stimuli_8[1].stimulus,
+                object3: test_stimuli_8[2].stimulus,
+                object4: test_stimuli_8[3].stimulus,
+                object5: test_stimuli_8[4].stimulus,
+                object6: test_stimuli_8[5].stimulus,
+                object7: test_stimuli_8[6].stimulus,
+                object8: test_stimuli_8[7].stimulus
+            },
     };
     
   const shuffle_arr = function shuffle(array) {
@@ -383,14 +428,15 @@
   }
 
   var num_of_blocks = [0, 1, 2, 3];
-    // var num_of_blocks = [2];
   var shuffled = shuffle_arr(num_of_blocks)
   var blocks = [block_start_1, block_start_2, block_start_3, block_start_4]
   var trials = [trials_block_1, trials_block_2, trials_block_3, trials_block_4]
 
-  for (let i = 0; i < shuffled.length; i++) {
+  // for (let i = 0; i < shuffled.length; i++) {
+    for (let i = 0; i < shuffled.length; i++) {
       timeline.push(blocks[shuffled[i]], trials[shuffled[i]], finish_block)
-      if (i == shuffled.length - 1) {
+      // if (i == shuffled.length - 1) {
+        if (i == shuffled.length - 2) {
           timeline.push(blocks[shuffled[i]], trials[shuffled[i]])
       }
   }
@@ -414,12 +460,21 @@
 
     timeline.push(debrief_block);
 
+// /* finish connection with pavlovia.org */
+//   var pavlovia_finish = {
+// 	  type: "pavlovia",
+// 	  command: "finish"
+//   	};
+//   timeline.push(pavlovia_finish);
+
+
 		/* start the experiment */
 		jsPsych.init({
 			timeline: timeline, 
       override_safe_mode: true,
       on_finish: function (data) {
-				jsPsych.data.displayData();
+        data.localSave('csv','ChoiceRTData.csv');
+				// jsPsych.data.displayData();
 			}
 		});
 
