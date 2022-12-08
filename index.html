@@ -2,11 +2,23 @@
 <html>
   <head>
     <title>Zoo experiment</title>
-    <script src="https://unpkg.com/jspsych@7.3.1"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.2"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
-    <link href="https://unpkg.com/jspsych@7.3.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jspsych.js"></script>
+    <script src="plugins/jspsych-resize.js"></script>
+    <script src="plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="plugins/jspsych-image-keyboard-response.js"></script>
+    <script src="plugins/jspsych-instructions.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
+    <script src="plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="plugins/jspsych-fullscreen.js"></script>
+    <script src="plugins/jspsych-html-button-response.js"></script>
+    <script src="plugins/jspsych-html-slider-response.js"></script>
+    <script src="plugins/jspsych-categorize-html.js"></script>
+    <script src="plugins/jspsych-preload.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="css/my_exp.css" rel="stylesheet" type="text/css">
+  <link href="css/jspsych.css" rel="stylesheet" type="text/css">
+
   </head>
   <body></body>
   <script>
@@ -16,46 +28,51 @@
     var vis_angle_px = 105
         //---------------------------------------------------------------------------------------------
 
-    /* initialize jsPsych */
-    var jsPsych = initJsPsych({
-      on_finish: function() {
-        jsPsych.data.displayData();
-      }
-    });
+    // /* initialize jsPsych */
+    // var jsPsych = initJsPsych({
+    //   on_finish: function() {
+    //     jsPsych.data.displayData();
+    //   }
+    // });
 
     /* create timeline */
     var timeline = [];
 
     /* preload images */
     var preload = {
-      type: jsPsychPreload,
+      type: 'preload',
       images: ['images/zoo.png','images/keyboard.png','images/space.png','images/1.png', 'images/2.png', 'images/3.png', 'images/4.png', 'images/5.png', 'images/6.png', 'images/7.png', 'images/8.png', 'images/9.png', 'images/10.png', 'images/11.png', 'images/12.png', 'images/13.png', 'images/14.png', 'images/15.png', 'images/16.png', 'images/17.png', 'images/18.png', 'images/19.png', 'images/20.png']
     };
     timeline.push(preload);
 
+
+    // var zoo = ['images/zoo.png']
+    // var keyboard = ['images/keyboard.png']
+    // var animals = ['images/1.png','images/2.png','images/3.png','images/4.png','images/5.png','images/6.png','images/7.png','images/8.png','images/9.png','images/10.png','images/11.png', 'images/12.png', 'images/13.png', 'images/14.png', 'images/15.png', 'images/16.png', 'images/17.png', 'images/18.png', 'images/19.png', 'images/20.png']
+
     /* define welcome message trial */
 
-    // var full_screen = {
-    //             type: 'fullscreen',
-    //             fullscreen_mode: true,
-    //             message: '<p style="text-align: center"> After pressing the button you will switch to full screen mode</p>',
-    //             button_label: 'Continue to full screen mode'
-    //         };
+    var full_screen = {
+                type: 'fullscreen',
+                fullscreen_mode: true,
+                message: '<p style="text-align: center"> After pressing the button you will switch to full screen mode</p>',
+                button_label: 'Continue to full screen mode'
+            };
     
     var welcome = {
-      type: jsPsychHtmlKeyboardResponse,
+      type: 'html-keyboard-response',
       stimulus: `
       <p>Welcome to the Zoo experiment. Press any key to begin.</p> 
       <div style='float: center;'><img src='images/zoo.png' style="width:639px;height:506px;"></img>
       `,
     };
 
-    // timeline.push(full_screen, welcome);
-     timeline.push(welcome);
+    timeline.push(full_screen, welcome);
+    //  timeline.push(welcome);
 
     /* define instructions trial */
     var instructions = {
-      type: jsPsychHtmlKeyboardResponse,
+      type: 'html-keyboard-response',
       stimulus: `
         <p>In this experiment, an animal will appear in the center 
         of the screen.</p><p> As you will see later, each animal belongs to one of two zoos (San Diego and Kansas-City).
@@ -67,7 +84,7 @@
         <p>You will have 4 test blocks. In each block, there will be new animals that you will require to remember.</p>
         <div style='width: 700px;'>
         </div>
-        <div style='float: center;'><img src='images/keyboard.png'></img>
+        <div style='float: center;'><img src='images/keyboard.png' style="width:517px;height:221px;"></img>
         <p>Press any key to begin.</p>
       `,
       post_trial_gap: 50
@@ -130,7 +147,7 @@
       /* define fixation and test trials */
     
     var block_start_1 = {
-      type: jsPsychHtmlKeyboardResponse,
+      type: 'html-keyboard-response',
       stimulus:  
       `<p style="justify-content: center; display:flex"><b><u>Test block</u></b></p>
         <p style="justify-content: center; display:flex">The animals on the left side of the screen belong to San-Diego Zoo.</p>
@@ -162,9 +179,8 @@
       post_trial_gap: 50
     };
 
-
     var block_start_2 = {
-      type: jsPsychHtmlKeyboardResponse,
+      type: 'html-keyboard-response',
       stimulus:  
       `
       <p style="justify-content: center; display:flex"><b><u>Test block</u></b></p>
@@ -200,7 +216,7 @@
     };
 
   var block_start_3 = {
-    type: jsPsychHtmlKeyboardResponse,
+    type: 'html-keyboard-response',
     stimulus:
       `<p style="justify-content: center; display:flex"><b><u>Test block</u></b></p>
         <p style="justify-content: center; display:flex">The animals on the left side of the screen belong to San-Diego Zoo.</p>
@@ -237,7 +253,7 @@
   }
 
     var block_start_4 = {
-      type: jsPsychHtmlKeyboardResponse,
+      type: 'html-keyboard-response',
       stimulus:  
   `<p style="justify-content: center; display:flex"><b><u>Test block</u></b></p>
         <p style="justify-content: center; display:flex">The animals on the left side of the screen belong to San-Diego Zoo.</p>
@@ -276,7 +292,7 @@
     };
 
     var fixation = {
-      type: jsPsychHtmlKeyboardResponse,
+      type: 'html-keyboard-response',
       stimulus: '<div style="font-size:60px;">+</div>',
       choices: "NO_KEYS",
       trial_duration: 500,
@@ -284,10 +300,12 @@
         task: 'fixation'
       }
     };
-
+ 
     var test = {
-      type: jsPsychImageKeyboardResponse,
-      stimulus: jsPsych.timelineVariable('stimulus'),
+      type: 'html-keyboard-response',
+      stimulus: function () {
+        return "<img src='" + jsPsych.timelineVariable('stimulus') + "'></img>";
+      },
       choices: ['s', 'k'],
       data: {
         task: 'response',
@@ -299,7 +317,7 @@
     };
 
     var finish_block = {
-      type: jsPsychHtmlKeyboardResponse,
+      type: 'html-keyboard-response',
       stimulus: '<p> Good job! The current block is over. </p>' +
       ' You can stretch a little and take a short break while sitting in front of the screen, if needed.</p><p> <br><br><br><b> Press SPACE to continue</b></p>',
       post_trial_gap: 50
@@ -385,7 +403,7 @@
 
     /* define debrief */
     var debrief_block = {
-      type: jsPsychHtmlKeyboardResponse,
+      type: 'html-keyboard-response',
       stimulus: function() {
 
         var trials = jsPsych.data.get().filter({task: 'response'});
@@ -402,8 +420,15 @@
 
     timeline.push(debrief_block);
 
-    /* start the experiment */
-    jsPsych.run(timeline);
+		/* start the experiment */
+		jsPsych.init({
+			timeline: timeline, 
+      override_safe_mode: true,
+      on_finish: function (data) {
+				jsPsych.data.displayData();
+			}
+		});
+
 
   </script>
 </html>
