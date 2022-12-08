@@ -149,7 +149,8 @@
                             {stimulus:shuffled_stimuli[18].stimulus, correct_response:correct_response[0].correct_response},
                             {stimulus:shuffled_stimuli[19].stimulus, correct_response:correct_response[1].correct_response}]
 
-   
+   var block = 0;
+
       /* define fixation and test trials */
     
     var block_start_1 = {
@@ -326,7 +327,10 @@
       type: 'html-keyboard-response',
       stimulus: '<p> Good job! The current block is over. </p>' +
       ' You can stretch a little and take a short break while sitting in front of the screen, if needed.</p><p> <br><br><br><b> Press SPACE to continue</b></p>',
-      post_trial_gap: 50
+      post_trial_gap: 50,
+      on_finish: function () {
+                block += 1;
+            }
     };
 
     /* define test procedure */
@@ -341,6 +345,7 @@
       randomize_order: true,
       data: {
                 set_size: '2',
+                block_num: block,
                 object1: test_stimuli_2[0].stimulus,
                 object2: test_stimuli_2[1].stimulus
             },
@@ -358,6 +363,7 @@
       randomize_order: true,
       data: {
                 set_size: '4',
+                block_num: block,
                 object1: test_stimuli_4[0].stimulus,
                 object2: test_stimuli_4[1].stimulus,
                 object3: test_stimuli_4[2].stimulus,
@@ -376,6 +382,7 @@
       randomize_order: true,
       data: {
                 set_size: '6',
+                block_num: block,
                 object1: test_stimuli_6[0].stimulus,
                 object2: test_stimuli_6[1].stimulus,
                 object3: test_stimuli_6[2].stimulus,
@@ -397,6 +404,7 @@
       randomize_order: true,
       data: {
                 set_size: '8',
+                block_num: block,
                 object1: test_stimuli_8[0].stimulus,
                 object2: test_stimuli_8[1].stimulus,
                 object3: test_stimuli_8[2].stimulus,
@@ -435,8 +443,7 @@
   // for (let i = 0; i < shuffled.length; i++) {
     for (let i = 0; i < shuffled.length; i++) {
       timeline.push(blocks[shuffled[i]], trials[shuffled[i]], finish_block)
-      // if (i == shuffled.length - 1) {
-        if (i == shuffled.length - 2) {
+        if (i == shuffled.length - 1) {
           timeline.push(blocks[shuffled[i]], trials[shuffled[i]])
       }
   }
