@@ -1,12 +1,5 @@
 
 
-
-    // /*this defines the css properties according to the window_screen_size*/
-    // var root = document.documentElement;
-    // var vis_angle_px = 105
-        //---------------------------------------------------------------------------------------------
-
-
     /* create timeline */
     var timeline = [];
 
