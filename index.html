@@ -19,14 +19,6 @@
     <link href="css/my_exp.css" rel="stylesheet" type="text/css">
   <link href="css/jspsych.css" rel="stylesheet" type="text/css">
 
-	<!-- <script type="text/javascript" src="lib/vendors/jspsych-6.0.0/jspsych.js"></script>
-	<link href="lib/vendors/jspsych-6.0.0/css/jspsych.css" rel="stylesheet" type="text/css" />
-
-	<script type="text/javascript" src="lib/vendors/jspsych-6.0.0/plugins/jspsych-html-keyboard-response.js"></script>
-	<script type="text/javascript" src="lib/vendors/jspsych-6.0.0/plugins/jspsych-image-keyboard-response.js"></script>
-
-	<script type="text/javascript" src="lib/vendors/jquery-2.2.0.min.js"></script>
-	<script type="text/javascript" src="lib/jspsych-pavlovia-2020.2.js"></script> -->
 
   </head>
   <body></body>
@@ -40,15 +32,6 @@
 
     /* create timeline */
     var timeline = [];
-
-
-    // /* init connection with pavlovia.org */
-    // var pavlovia_init = {
-    //   type: "pavlovia",
-    //   command: "init"
-    // };
-    
-    // timeline.push(pavlovia_init);
 
     /* preload images */
     var preload = {
@@ -443,9 +426,9 @@
   // for (let i = 0; i < shuffled.length; i++) {
     for (let i = 0; i < shuffled.length; i++) {
       timeline.push(blocks[shuffled[i]], trials[shuffled[i]], finish_block)
-        if (i == shuffled.length - 1) {
-          timeline.push(blocks[shuffled[i]], trials[shuffled[i]])
-      }
+        //if (i == shuffled.length - 1) {
+        //  timeline.push(blocks[shuffled[i]], trials[shuffled[i]])
+     // }
   }
 
     /* define debrief */
@@ -467,21 +450,13 @@
 
     timeline.push(debrief_block);
 
-// /* finish connection with pavlovia.org */
-//   var pavlovia_finish = {
-// 	  type: "pavlovia",
-// 	  command: "finish"
-//   	};
-//   timeline.push(pavlovia_finish);
-
-
 		/* start the experiment */
 		jsPsych.init({
 			timeline: timeline, 
       override_safe_mode: true,
       on_finish: function (data) {
-        data.localSave('csv','ChoiceRTData.csv');
-				// jsPsych.data.displayData();
+        //data.localSave('csv','ChoiceRTData.csv');
+				jsPsych.data.displayData();
 			}
 		});
 
